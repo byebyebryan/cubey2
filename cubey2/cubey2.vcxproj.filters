@@ -16,6 +16,9 @@
     <ClCompile Include="LoggerUtil.cpp">
       <Filter>Logger</Filter>
     </ClCompile>
+    <ClCompile Include="ConsoleLoggerMT.cpp">
+      <Filter>Logger</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ServiceLocator.h" />
@@ -33,5 +36,8 @@
     <ClInclude Include="OrderedConditionVar.h" />
     <ClInclude Include="DuoBuffer.h" />
     <ClInclude Include="DuoBufferMTB.h" />
+    <ClInclude Include="ConsoleLoggerMT.h">
+      <Filter>Logger</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

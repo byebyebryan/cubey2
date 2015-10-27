@@ -132,10 +132,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleLogger.cpp" />
+    <ClCompile Include="ConsoleLoggerMT.cpp" />
     <ClCompile Include="LoggerUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleLogger.h" />
+    <ClInclude Include="ConsoleLoggerMT.h" />
     <ClInclude Include="Cubey2.h" />
     <ClInclude Include="DuoBuffer.h" />
     <ClInclude Include="DuoBufferMTB.h" />

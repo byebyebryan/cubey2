@@ -7,7 +7,7 @@
 
 namespace cubey2 {
 
-	inline void Log(const std::string& message) {
+	void Log(const std::string& message) {
 		ServiceLocator<ILogger>::service()->Log(message);
 	}
 
