@@ -85,7 +85,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -137,9 +137,12 @@
   <ItemGroup>
     <ClInclude Include="ConsoleLogger.h" />
     <ClInclude Include="Cubey2.h" />
+    <ClInclude Include="DuoBuffer.h" />
+    <ClInclude Include="DuoBufferMTB.h" />
     <ClInclude Include="ILogger.h" />
     <ClInclude Include="IService.h" />
     <ClInclude Include="LoggerUtil.h" />
+    <ClInclude Include="OrderedConditionVar.h" />
     <ClInclude Include="ServiceLocator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

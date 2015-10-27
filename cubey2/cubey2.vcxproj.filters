@@ -30,5 +30,8 @@
     <ClInclude Include="LoggerUtil.h">
       <Filter>Logger</Filter>
     </ClInclude>
+    <ClInclude Include="OrderedConditionVar.h" />
+    <ClInclude Include="DuoBuffer.h" />
+    <ClInclude Include="DuoBufferMTB.h" />
   </ItemGroup>
 </Project>
