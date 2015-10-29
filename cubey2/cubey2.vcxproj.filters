@@ -8,32 +8,30 @@
     <Filter Include="Logger">
       <UniqueIdentifier>{cf7b8278-0fbc-4b87-8097-6b32adc2645b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Service">
+      <UniqueIdentifier>{91a1ca02-dd8c-4a32-861a-4a76c3716604}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Thread">
+      <UniqueIdentifier>{cc10a970-2d7c-404e-968c-2de251735820}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleLogger.cpp">
       <Filter>Logger</Filter>
     </ClCompile>
-    <ClCompile Include="LoggerUtil.cpp">
-      <Filter>Logger</Filter>
-    </ClCompile>
     <ClCompile Include="ConsoleLoggerMT.cpp">
       <Filter>Logger</Filter>
     </ClCompile>
-    <ClCompile Include="ILoggerMT.cpp">
-      <Filter>Logger</Filter>
+    <ClCompile Include="ThreadManager.cpp">
+      <Filter>Thread</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ServiceLocator.h" />
     <ClInclude Include="Cubey2.h" />
-    <ClInclude Include="IService.h" />
     <ClInclude Include="ConsoleLogger.h">
       <Filter>Logger</Filter>
     </ClInclude>
     <ClInclude Include="ILogger.h">
-      <Filter>Logger</Filter>
-    </ClInclude>
-    <ClInclude Include="LoggerUtil.h">
       <Filter>Logger</Filter>
     </ClInclude>
     <ClInclude Include="OrderedConditionVar.h" />
@@ -42,9 +40,17 @@
     <ClInclude Include="ConsoleLoggerMT.h">
       <Filter>Logger</Filter>
     </ClInclude>
-    <ClInclude Include="ILoggerMT.h">
-      <Filter>Logger</Filter>
+    <ClInclude Include="IService.h">
+      <Filter>Service</Filter>
     </ClInclude>
-    <ClInclude Include="Thread.h" />
+    <ClInclude Include="ServiceLocator.h">
+      <Filter>Service</Filter>
+    </ClInclude>
+    <ClInclude Include="Thread.h">
+      <Filter>Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadManager.h">
+      <Filter>Thread</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

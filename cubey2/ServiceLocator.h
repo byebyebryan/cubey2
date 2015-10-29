@@ -9,10 +9,6 @@ namespace cubey2 {
 		}
 
 		static void set_service(ServiceT* _service) {
-			if (service_ && service_ != _service) {
-				service_->Destroy();
-				delete service_;
-			}
 			service_ = _service;
 		}
 	private:

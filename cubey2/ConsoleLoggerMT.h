@@ -1,29 +1,19 @@
 #pragma once
 
-#include <queue>
+#include <thread>
+#include <mutex>
 
-#include "ILogger.h"
-#include "IService.h"
-#include "LoggerUtil.h"
-#include "DuoBufferMTB.h"
+#include "ConsoleLogger.h"
+#include "ThreadManager.h"
 
 namespace cubey2 {
-	class ConsoleLoggerMT : public ILogger, public IService<ILogger, ConsoleLoggerMT> {
+	class ConsoleLoggerMT : public ConsoleLogger {
 	public:
-		void Init() override;
 		void Log(const std::string& message) override;
 
-		struct LogEntryMT {
-			std::thread::id thread_id;
-			time_t time_stamp;
-			std::string message;
-
-			LogEntryMT(const std::string& _message) :
-				thread_id(std::this_thread::get_id()),
-				time_stamp(time(NULL)),
-				message(_message) {}
-		};
 	private:
-		DuoBufferMTB<std::queue<LogEntryMT>> buffer_;
+		static std::string GetPrefixMT();
+
+		std::mutex mutex_;
 	};
 }

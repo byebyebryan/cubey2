@@ -1,11 +1,14 @@
 #include "ConsoleLoggerMT.h"
 
 namespace cubey2 {
-	void ConsoleLoggerMT::Init() {
 
-	}
 	void ConsoleLoggerMT::Log(const std::string & message) {
-		auto f_lock = buffer_.LockFrontBuffer();
-		buffer_.front_buffer()->push(LogEntryMT(message));
+		std::lock_guard<std::mutex> lock(mutex_);
+		auto ss = GetPrefixMT();
+		std::cout << ss + message << std::endl;
+	}
+	std::string ConsoleLoggerMT::GetPrefixMT()
+	{
+		return ConsoleLogger::GetPrefix() + ThreadManager::GetInstance()->GetThread().name_;
 	}
 }
