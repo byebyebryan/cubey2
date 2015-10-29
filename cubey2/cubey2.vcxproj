@@ -133,6 +133,7 @@
   <ItemGroup>
     <ClCompile Include="ConsoleLogger.cpp" />
     <ClCompile Include="ConsoleLoggerMT.cpp" />
+    <ClCompile Include="ILoggerMT.cpp" />
     <ClCompile Include="LoggerUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -142,10 +143,12 @@
     <ClInclude Include="DuoBuffer.h" />
     <ClInclude Include="DuoBufferMTB.h" />
     <ClInclude Include="ILogger.h" />
+    <ClInclude Include="ILoggerMT.h" />
     <ClInclude Include="IService.h" />
     <ClInclude Include="LoggerUtil.h" />
     <ClInclude Include="OrderedConditionVar.h" />
     <ClInclude Include="ServiceLocator.h" />
+    <ClInclude Include="Thread.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

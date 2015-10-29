@@ -3,16 +3,14 @@
 #include <queue>
 
 #include "ILogger.h"
-#include "IService.h"
-#include "LoggerUtil.h"
 #include "DuoBufferMTB.h"
 
 namespace cubey2 {
-	class ConsoleLoggerMT : public ILogger, public IService<ILogger, ConsoleLoggerMT> {
+	class ILoggerMT : public ILogger {
 	public:
-		void Init() override;
 		void Log(const std::string& message) override;
 
+	protected:
 		struct LogEntryMT {
 			std::thread::id thread_id;
 			time_t time_stamp;
@@ -23,7 +21,9 @@ namespace cubey2 {
 				time_stamp(time(NULL)),
 				message(_message) {}
 		};
-	private:
+
+		void ProcessBackBuffer();
+
 		DuoBufferMTB<std::queue<LogEntryMT>> buffer_;
 	};
 }

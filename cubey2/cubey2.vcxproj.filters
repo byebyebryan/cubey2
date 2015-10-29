@@ -19,6 +19,9 @@
     <ClCompile Include="ConsoleLoggerMT.cpp">
       <Filter>Logger</Filter>
     </ClCompile>
+    <ClCompile Include="ILoggerMT.cpp">
+      <Filter>Logger</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ServiceLocator.h" />
@@ -39,5 +42,9 @@
     <ClInclude Include="ConsoleLoggerMT.h">
       <Filter>Logger</Filter>
     </ClInclude>
+    <ClInclude Include="ILoggerMT.h">
+      <Filter>Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="Thread.h" />
   </ItemGroup>
 </Project>
