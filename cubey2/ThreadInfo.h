@@ -1,7 +1,7 @@
 #pragma once
 
 namespace cubey2 {
-	struct Thread {
+	struct ThreadInfo {
 		std::string name_;
 	};
 }

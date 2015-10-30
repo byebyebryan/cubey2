@@ -1,8 +1,5 @@
 #pragma once
 
-#include <iostream>
-#include <sstream>
-
 #include "IService.h"
 
 namespace cubey2 {
@@ -11,4 +8,6 @@ namespace cubey2 {
 		virtual ~ILogger() {}
 		virtual void Log(const std::string& message) = 0;
 	};
+
+	using Logger = ILogger;
 }

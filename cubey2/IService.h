@@ -1,5 +1,8 @@
 #pragma once
 
+#include <iostream>
+#include <string>
+
 #include "ServiceLocator.h"
 
 namespace cubey2 {
@@ -26,6 +29,14 @@ namespace cubey2 {
 			}
 			
 			ServiceLocator<ServiceT>::set_service(_new_service);
+		}
+
+		static void DestroyService() {
+			ServiceT* service = ServiceLocator<ServiceT>::service();
+			if (service) {
+				service->Destroy();
+				delete service;
+			}
 		}
 
 		static ServiceT* GetInstance() {

@@ -23,15 +23,25 @@ void LoggingTest() {
 }
 
 int main(void) {
-	ILogger::InitService<ConsoleLoggerMT>();
+	TimeManager::InitService();
+	ThreadManager::InitService();
+	FileManager::InitService();
 
-	for (int i = 0; i < 10; i++ ) {
+	Logger::InitService<TXTLoggerMT>();
+
+	/*for (int i = 0; i < 10; i++ ) {
 		ThreadManager::GetInstance()->LaunchThread("thread"+std::to_string(i), LoggingTest);
-	}
+	}*/
 
-	/*std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+	Logger::GetInstance()->Log("cores : [" + std::to_string(std::thread::hardware_concurrency()) + "]");
+	Logger::DestroyService();
+	ThreadManager::DestroyService();
 
-	logging_buffer.SwapMTB();
+	
+	
+	//std::this_thread::sleep_for(std::chrono::milliseconds(3000));
+
+	/*logging_buffer.SwapMTB();
 
 	auto lock = logging_buffer.LockBackBuffer();
 	while(!logging_buffer.back_buffer()->empty()) {

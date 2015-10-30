@@ -5,52 +5,82 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Logger">
+    <Filter Include="Source">
+      <UniqueIdentifier>{c29d7179-f41c-4aba-bdfc-aaa952d9bbd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Logger">
       <UniqueIdentifier>{cf7b8278-0fbc-4b87-8097-6b32adc2645b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Service">
+    <Filter Include="Source\Service">
       <UniqueIdentifier>{91a1ca02-dd8c-4a32-861a-4a76c3716604}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Thread">
+    <Filter Include="Source\Thread">
       <UniqueIdentifier>{cc10a970-2d7c-404e-968c-2de251735820}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleLogger.cpp">
-      <Filter>Logger</Filter>
+      <Filter>Source\Logger</Filter>
     </ClCompile>
     <ClCompile Include="ConsoleLoggerMT.cpp">
-      <Filter>Logger</Filter>
+      <Filter>Source\Logger</Filter>
     </ClCompile>
     <ClCompile Include="ThreadManager.cpp">
-      <Filter>Thread</Filter>
+      <Filter>Source\Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="FileManager.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeManager.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TXTLoggerMT.cpp">
+      <Filter>Source\Logger</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cubey2.h" />
     <ClInclude Include="ConsoleLogger.h">
-      <Filter>Logger</Filter>
+      <Filter>Source\Logger</Filter>
     </ClInclude>
     <ClInclude Include="ILogger.h">
-      <Filter>Logger</Filter>
+      <Filter>Source\Logger</Filter>
     </ClInclude>
-    <ClInclude Include="OrderedConditionVar.h" />
-    <ClInclude Include="DuoBuffer.h" />
-    <ClInclude Include="DuoBufferMTB.h" />
     <ClInclude Include="ConsoleLoggerMT.h">
-      <Filter>Logger</Filter>
+      <Filter>Source\Logger</Filter>
     </ClInclude>
     <ClInclude Include="IService.h">
-      <Filter>Service</Filter>
+      <Filter>Source\Service</Filter>
     </ClInclude>
     <ClInclude Include="ServiceLocator.h">
-      <Filter>Service</Filter>
-    </ClInclude>
-    <ClInclude Include="Thread.h">
-      <Filter>Thread</Filter>
+      <Filter>Source\Service</Filter>
     </ClInclude>
     <ClInclude Include="ThreadManager.h">
-      <Filter>Thread</Filter>
+      <Filter>Source\Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadInfo.h">
+      <Filter>Source\Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="DuoBuffer.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="DuoBufferMTB.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="OrderedConditionVar.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="FileManager.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeManager.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="OutputFile.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="TXTLoggerMT.h">
+      <Filter>Source\Logger</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

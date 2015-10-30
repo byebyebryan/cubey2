@@ -133,7 +133,10 @@
   <ItemGroup>
     <ClCompile Include="ConsoleLogger.cpp" />
     <ClCompile Include="ConsoleLoggerMT.cpp" />
+    <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="ThreadManager.cpp" />
+    <ClCompile Include="TimeManager.cpp" />
+    <ClCompile Include="TXTLoggerMT.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleLogger.h" />
@@ -141,12 +144,16 @@
     <ClInclude Include="Cubey2.h" />
     <ClInclude Include="DuoBuffer.h" />
     <ClInclude Include="DuoBufferMTB.h" />
+    <ClInclude Include="OutputFile.h" />
+    <ClInclude Include="FileManager.h" />
     <ClInclude Include="ILogger.h" />
     <ClInclude Include="IService.h" />
     <ClInclude Include="OrderedConditionVar.h" />
     <ClInclude Include="ServiceLocator.h" />
-    <ClInclude Include="Thread.h" />
+    <ClInclude Include="ThreadInfo.h" />
     <ClInclude Include="ThreadManager.h" />
+    <ClInclude Include="TimeManager.h" />
+    <ClInclude Include="TXTLoggerMT.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

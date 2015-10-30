@@ -1,14 +1,12 @@
 #include "ConsoleLoggerMT.h"
 
+#include "TimeManager.h"
+#include "ThreadManager.h"
+
 namespace cubey2 {
 
-	void ConsoleLoggerMT::Log(const std::string & message) {
+	void ConsoleLoggerMT::Log(const std::string & _message) {
 		std::lock_guard<std::mutex> lock(mutex_);
-		auto ss = GetPrefixMT();
-		std::cout << ss + message << std::endl;
-	}
-	std::string ConsoleLoggerMT::GetPrefixMT()
-	{
-		return ConsoleLogger::GetPrefix() + ThreadManager::GetInstance()->GetThread().name_;
+		std::cout << TimeManager::GetInstance()->GetTimePrefix() + " - " + ThreadManager::GetInstance()->GetThreadInfo().name_ + " - " + _message << std::endl;
 	}
 }
