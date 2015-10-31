@@ -14,7 +14,7 @@ namespace cubey2 {
 		void Init() override;
 
 		TimePoint GetCurrentTime();
-		std::string GetTimePrefix(const std::string& _format = kDefaultTimeFormat);
+		std::string GetTimeString(const std::string& _format = kDefaultTimeFormat);
 
 	private:
 		TimePoint start_time_point_;

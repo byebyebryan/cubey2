@@ -16,28 +16,45 @@ void LoggingTest() {
 		logging_buffer.front_buffer()->push("thread " + std::to_string(t_id) + " count " + std::to_string(i) + "\n");
 	}*/
 
-	for (int i = 0; i < 100;i++) {
-		ILogger::GetInstance()->Log("count " + std::to_string(i));
+	for (int i = 0; i < 10;i++) {
+		Logger::GetInstance()->Log("count " + std::to_string(i));
 	}
-	
 }
 
 int main(void) {
 	TimeManager::InitService();
 	ThreadManager::InitService();
 	FileManager::InitService();
-
+	//Logger::InitService<ConsoleLoggerMT>();
+	TaskScheduler::InitService();
 	Logger::InitService<TXTLoggerMT>();
 
 	/*for (int i = 0; i < 10; i++ ) {
 		ThreadManager::GetInstance()->LaunchThread("thread"+std::to_string(i), LoggingTest);
 	}*/
 
-	Logger::GetInstance()->Log("cores : [" + std::to_string(std::thread::hardware_concurrency()) + "]");
-	Logger::DestroyService();
-	ThreadManager::DestroyService();
+	/*TimePoint start = TimeManager::GetInstance()->GetCurrentTime();
 
+	std::cout << FileManager::GetInstance()->GetOutputFile("test.log")->file_size() << std::endl;
+
+	Logger::GetInstance()->Log("cores : [" + std::to_string(std::thread::hardware_concurrency()) + "]");
+
+	FileManager::GetInstance()->GetOutputFile("test.log")->WriteToDisk();
+
+	std::cout << FileManager::GetInstance()->GetOutputFile("test.log")->file_size() << std::endl;*/
+
+	TaskScheduler::GetInstance()->ScheduleRepeatingTask(2000, LoggingTest);
+
+	std::this_thread::sleep_for(std::chrono::milliseconds(10000));
 	
+	TaskScheduler::GetInstance()->UnscheduleAllTask();
+
+	Logger::DestroyService();
+	TaskScheduler::DestroyService();
+	
+	FileManager::DestroyService();
+	ThreadManager::DestroyService();
+	TimeManager::DestroyService();
 	
 	//std::this_thread::sleep_for(std::chrono::milliseconds(3000));
 

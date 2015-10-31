@@ -17,6 +17,21 @@
     <Filter Include="Source\Thread">
       <UniqueIdentifier>{cc10a970-2d7c-404e-968c-2de251735820}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\DuoBuffer">
+      <UniqueIdentifier>{b0081fad-0608-4362-bee3-12a4a6e2cc06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\File">
+      <UniqueIdentifier>{fb9f6a1a-9ac4-476d-814b-94687aaa7f5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Time">
+      <UniqueIdentifier>{b0eded0e-a2b1-4ff4-b03f-570e3f1c1238}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Util">
+      <UniqueIdentifier>{6340ff6a-ae0a-43c8-8008-ae445c42ffe1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Schedule">
+      <UniqueIdentifier>{5b20349f-c3ec-47ab-bd2a-4ba614e241dd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleLogger.cpp">
@@ -28,14 +43,17 @@
     <ClCompile Include="ThreadManager.cpp">
       <Filter>Source\Thread</Filter>
     </ClCompile>
-    <ClCompile Include="FileManager.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="TimeManager.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
     <ClCompile Include="TXTLoggerMT.cpp">
       <Filter>Source\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeManager.cpp">
+      <Filter>Source\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="FileManager.cpp">
+      <Filter>Source\File</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskScheduler.cpp">
+      <Filter>Source\Schedule</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -61,26 +79,38 @@
     <ClInclude Include="ThreadInfo.h">
       <Filter>Source\Thread</Filter>
     </ClInclude>
-    <ClInclude Include="DuoBuffer.h">
-      <Filter>Source</Filter>
-    </ClInclude>
-    <ClInclude Include="DuoBufferMTB.h">
-      <Filter>Source</Filter>
-    </ClInclude>
     <ClInclude Include="OrderedConditionVar.h">
-      <Filter>Source</Filter>
-    </ClInclude>
-    <ClInclude Include="FileManager.h">
-      <Filter>Source</Filter>
-    </ClInclude>
-    <ClInclude Include="TimeManager.h">
-      <Filter>Source</Filter>
-    </ClInclude>
-    <ClInclude Include="OutputFile.h">
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="TXTLoggerMT.h">
       <Filter>Source\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="DuoBuffer.h">
+      <Filter>Source\DuoBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="DuoBufferMTB.h">
+      <Filter>Source\DuoBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeManager.h">
+      <Filter>Source\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="FileManager.h">
+      <Filter>Source\File</Filter>
+    </ClInclude>
+    <ClInclude Include="OutputFile.h">
+      <Filter>Source\File</Filter>
+    </ClInclude>
+    <ClInclude Include="IDGenerator.h">
+      <Filter>Source\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskScheduler.h">
+      <Filter>Source\Schedule</Filter>
+    </ClInclude>
+    <ClInclude Include="RepeatingTask.h">
+      <Filter>Source\Schedule</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities.h">
+      <Filter>Source\Util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

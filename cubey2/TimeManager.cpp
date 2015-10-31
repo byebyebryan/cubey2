@@ -11,7 +11,7 @@ namespace cubey2 {
 		return std::chrono::high_resolution_clock::now();
 	}
 
-	std::string TimeManager::GetTimePrefix(const std::string& _format) {
+	std::string TimeManager::GetTimeString(const std::string& _format) {
 		time_t rawtime;
 		struct tm timeinfo;
 

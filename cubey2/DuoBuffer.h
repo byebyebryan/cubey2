@@ -5,15 +5,21 @@ namespace cubey2 {
 	class DuoBuffer {
 	public:
 		DuoBuffer() :
-			ping_(BufferT()), pong_(BufferT()), flip_(false) {
+				ping_(BufferT()), 
+				pong_(BufferT()), 
+				flip_(false) {
 		}
 
 		DuoBuffer(const BufferT& _front_buffer) :
-			ping_(_front_buffer), pong_(BufferT()), flip_(false) {
+				ping_(_front_buffer), 
+				pong_(BufferT()), 
+				flip_(false) {
 		}
 
 		DuoBuffer(const BufferT& _front_buffer, const BufferT& _back_buffer) :
-			ping_(_front_buffer), pong_(_back_buffer), flip_(false) {
+				ping_(_front_buffer), 
+				pong_(_back_buffer), 
+				flip_(false) {
 		}
 
 		BufferT* front_buffer() {

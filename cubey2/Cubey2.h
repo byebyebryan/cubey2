@@ -5,6 +5,7 @@
 #include "TimeManager.h"
 #include "ThreadManager.h"
 #include "FileManager.h"
+#include "TaskScheduler.h"
 
 #include "ConsoleLogger.h"
 #include "ConsoleLoggerMT.h"
