@@ -1,27 +1,25 @@
 #pragma once
 
-#include <functional>
-
-#include "IDGenerator.h"
-#include "TimeManager.h"
+#include "ITask.h"
 
 namespace cubey2 {
-	struct RepeatingTask {
-		UID id_;
-		std::chrono::milliseconds interval_;
-		TimePoint last_run_time_;
-		TimePoint next_run_time_;
+	class RepeatingTask : public ITask<RepeatingTask> {
+	public:
+		void Start(const TimePoint& _now) override {
+			next_run_time_ = _now + interval_;;
+		}
 
-		std::function<void()> process_fn_;
-		std::function<bool()> override_trigger_fn_;
-
-		void Update() {
-			TimePoint now = TimeManager::GetInstance()->GetCurrentTime();
-			if (now > next_run_time_ || override_trigger_fn_()) {
+		void Update(const TimePoint& _now) override {
+			if (_now > next_run_time_ || override_trigger_fn_()) {
 				process_fn_();
-				last_run_time_ = now;
-				next_run_time_ = now + interval_;
+				last_run_time_ = _now;
+				next_run_time_ = _now + interval_;
 			}
 		}
+
+		std::chrono::milliseconds interval_;
+		std::function<bool()> override_trigger_fn_;
+		TimePoint last_run_time_;
+		TimePoint next_run_time_;
 	};
 }

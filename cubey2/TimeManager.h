@@ -8,16 +8,21 @@ namespace cubey2 {
 	const std::string kDefaultTimeFormat = "%Y/%m/%d_%X";
 
 	using TimePoint = std::chrono::time_point<std::chrono::high_resolution_clock>;
+	using SystemTimePoint = std::chrono::time_point<std::chrono::system_clock>;
 
 	class TimeManager : public IService<TimeManager> {
 	public:
-		void Init() override;
+		void StartUp() override;
 
-		TimePoint GetCurrentTime();
-		std::string GetTimeString(const std::string& _format = kDefaultTimeFormat);
+		TimePoint GetCurrentTimePoint();
+		SystemTimePoint GetCurrentSystemTimePoint();
+
+		std::string GetTimeString(const SystemTimePoint& _system_time_point, const std::string& _format = kDefaultTimeFormat);
+		std::string GetCurrentTimeString(const std::string& _format = kDefaultTimeFormat);
 
 	private:
 		TimePoint start_time_point_;
+		SystemTimePoint start_system_time_point_;
 	};
 }
 

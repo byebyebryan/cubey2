@@ -3,26 +3,33 @@
 #include <time.h>
 
 namespace cubey2 {
-	void TimeManager::Init() {
-		start_time_point_ = GetCurrentTime();
+	void TimeManager::StartUp() {
+		start_time_point_ = GetCurrentTimePoint();
+		start_system_time_point_ = GetCurrentSystemTimePoint();
 	}
 
-	TimePoint TimeManager::GetCurrentTime() {
+	TimePoint TimeManager::GetCurrentTimePoint() {
 		return std::chrono::high_resolution_clock::now();
 	}
 
-	std::string TimeManager::GetTimeString(const std::string& _format) {
-		time_t rawtime;
-		struct tm timeinfo;
+	SystemTimePoint TimeManager::GetCurrentSystemTimePoint() {
+		return std::chrono::system_clock::now();
+	}
 
-		time(&rawtime);
-		localtime_s(&timeinfo, &rawtime);
+	std::string TimeManager::GetTimeString(const SystemTimePoint& _system_time_point, const std::string& _format) {
+		time_t raw_time = std::chrono::system_clock::to_time_t(_system_time_point);
+		tm time_info;
+		localtime_s(&time_info, &raw_time);
 
 		char buffer[80];
-		strftime(buffer, 80, _format.c_str(), &timeinfo);
+		strftime(buffer, 80, _format.c_str(), &time_info);
 
 		return std::string(buffer);
 	}
 
-	
+	std::string TimeManager::GetCurrentTimeString(const std::string& _format) {
+		SystemTimePoint current_time = GetCurrentSystemTimePoint();
+		return GetTimeString(current_time, _format);
+	}
+
 }

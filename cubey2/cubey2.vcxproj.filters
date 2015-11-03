@@ -32,11 +32,14 @@
     <Filter Include="Source\Schedule">
       <UniqueIdentifier>{5b20349f-c3ec-47ab-bd2a-4ba614e241dd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="OnHold">
+      <UniqueIdentifier>{557fabbe-6499-4b8a-9e62-65f8a1a66a49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Event">
+      <UniqueIdentifier>{9ff794c1-4fd1-4639-915c-16ab1ec0cd58}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleLogger.cpp">
-      <Filter>Source\Logger</Filter>
-    </ClCompile>
     <ClCompile Include="ConsoleLoggerMT.cpp">
       <Filter>Source\Logger</Filter>
     </ClCompile>
@@ -55,12 +58,12 @@
     <ClCompile Include="TaskScheduler.cpp">
       <Filter>Source\Schedule</Filter>
     </ClCompile>
+    <ClCompile Include="ConsoleLogger.cpp">
+      <Filter>OnHold</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cubey2.h" />
-    <ClInclude Include="ConsoleLogger.h">
-      <Filter>Source\Logger</Filter>
-    </ClInclude>
     <ClInclude Include="ILogger.h">
       <Filter>Source\Logger</Filter>
     </ClInclude>
@@ -70,17 +73,11 @@
     <ClInclude Include="IService.h">
       <Filter>Source\Service</Filter>
     </ClInclude>
-    <ClInclude Include="ServiceLocator.h">
-      <Filter>Source\Service</Filter>
-    </ClInclude>
     <ClInclude Include="ThreadManager.h">
       <Filter>Source\Thread</Filter>
     </ClInclude>
     <ClInclude Include="ThreadInfo.h">
       <Filter>Source\Thread</Filter>
-    </ClInclude>
-    <ClInclude Include="OrderedConditionVar.h">
-      <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="TXTLoggerMT.h">
       <Filter>Source\Logger</Filter>
@@ -111,6 +108,21 @@
     </ClInclude>
     <ClInclude Include="Utilities.h">
       <Filter>Source\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="OrderedConditionVar.h">
+      <Filter>OnHold</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleLogger.h">
+      <Filter>OnHold</Filter>
+    </ClInclude>
+    <ClInclude Include="IEvent.h">
+      <Filter>Source\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="ServiceLocator.h">
+      <Filter>OnHold</Filter>
+    </ClInclude>
+    <ClInclude Include="ITask.h">
+      <Filter>Source\Schedule</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

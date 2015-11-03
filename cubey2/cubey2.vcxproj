@@ -146,6 +146,8 @@
     <ClInclude Include="DuoBuffer.h" />
     <ClInclude Include="DuoBufferMTB.h" />
     <ClInclude Include="IDGenerator.h" />
+    <ClInclude Include="IEvent.h" />
+    <ClInclude Include="ITask.h" />
     <ClInclude Include="RepeatingTask.h" />
     <ClInclude Include="TaskScheduler.h" />
     <ClInclude Include="OutputFile.h" />

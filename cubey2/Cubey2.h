@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ServiceLocator.h"
+#include "IService.h"
 
 #include "TimeManager.h"
 #include "ThreadManager.h"

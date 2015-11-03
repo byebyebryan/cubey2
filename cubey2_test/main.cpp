@@ -49,12 +49,11 @@ int main(void) {
 	
 	TaskScheduler::GetInstance()->UnscheduleAllTask();
 
-	Logger::DestroyService();
-	TaskScheduler::DestroyService();
-	
-	FileManager::DestroyService();
-	ThreadManager::DestroyService();
-	TimeManager::DestroyService();
+	ServiceLocator<Logger>::ShutDownService();
+	ServiceLocator<TaskScheduler>::ShutDownService();
+	ServiceLocator<FileManager>::ShutDownService();
+	ServiceLocator<ThreadManager>::ShutDownService();
+	ServiceLocator<TimeManager>::ShutDownService();
 	
 	//std::this_thread::sleep_for(std::chrono::milliseconds(3000));
 

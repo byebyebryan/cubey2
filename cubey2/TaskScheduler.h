@@ -17,7 +17,7 @@ namespace cubey2 {
 			std::lock_guard<std::mutex> lock(mutex_);
 			interval_ = std::chrono::milliseconds(kDefaultSchedulerInterval);
 			stop_signal_received_ = false;
-			ThreadManager::GetInstance()->LaunchThread("LI TaskScheduler Thread",&TaskScheduler::ThreadWorker, this);
+			ThreadManager::GetInstance()->LaunchThread("TaskScheduler Thread",&TaskScheduler::ThreadWorker, this);
 		}
 
 		void Destroy() override {
